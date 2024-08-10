@@ -13,11 +13,11 @@ const Footer = () => {
             <p>SHOPPER</p>
         </div>
         <ul className='footer-links'>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Email</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>Facebook</li>
+            <li>Youtube</li>
         </ul>
         <div className='footer-social-icon'>
             <div className='footer-icons-container'>
