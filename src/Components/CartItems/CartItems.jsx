@@ -3,7 +3,7 @@ import './CartItems.css'
 import {ShopContext} from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 const CartItems = () => {
-    const{all_product,cartItems,removeFromCart}=useContext(ShopContext);
+    const{getTotalCartAmount,all_product,cartItems,removeFromCart}=useContext(ShopContext);
   return (
     <div className='cartitems'>
         <div className='cartitems-format-main'>
@@ -19,7 +19,7 @@ const CartItems = () => {
             if(cartItems[e.id]>0)
             {
                 return <div>
-                        <div className='cartitems-format cartitems-format-main'>
+                        <div className='cartitems-format, cartitems-format-main'>
                             <img src={e.image} alt="" className='carticon-product-icon' />
                             <p>{e.name}</p>
                              <p>${e.new_price}</p>
@@ -38,19 +38,20 @@ const CartItems = () => {
                 <div>
                     <div className="cartitems-total-item">
                         <p>Subtotal</p>
-                        <p>${0}</p>
+                        <p>${getTotalCartAmount()}</p>
                     </div>
                     <hr />
-                    <div className="cartitems-total-items">
+                    <div className="cartitems-total-item">
                         <p>Shipping Fee</p>
                         <p>Free</p>
                     </div>
                     <hr />
-                    <div className="cartitems-total-items">
+                    <div className="cartitems-total-item">
                         <h3>Total</h3>
-                        <h3>${0}</h3>
+                        <h3>${getTotalCartAmount()}</h3>
                     </div>
-                    <button>PROCEED TO CHECKOUT</button>
+                </div>
+                <button>PROCEED TO CHECKOUT</button>
                 </div>
                 <div className="cartitems-promocode">
                     <p>If you have a promocode, Enter it here</p>
@@ -61,7 +62,6 @@ const CartItems = () => {
                 </div>
             </div>
         </div>
-    </div>
   )
 }
 
