@@ -5,11 +5,17 @@ import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart';
-import LoginSignup from './Pages/LoginSignup';
+import Login from './Pages/Login.jsx';
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
+import axios from 'axios';
+import Signup from './Pages/Signup.jsx';
+
+axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.withCredentials = true
+ 
 
 function App() {
   return (
@@ -25,7 +31,8 @@ function App() {
             <Route path=':ProductId' element={<Product/>}/>
         </Route>
         <Route path='/Cart' element={<Cart/>}/>
-        <Route path='/Login' element={<LoginSignup/>}/>
+        <Route path='/Login' element={<Login/>}/>
+        <Route path='/Signup' element={<Signup/>}/>
       </Routes>
       <Footer/>
       </BrowserRouter>  
