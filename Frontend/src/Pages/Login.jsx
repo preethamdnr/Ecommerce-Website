@@ -2,17 +2,24 @@ import React from 'react'
 import './CSS/Login.css'
 import {useState} from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import './Signup.jsx'
 
 export default function Login(){
 
-  const [data, setData]=useState({
-    email:'',
-    password:'',
-  })
+  const [email, setEmail]=useState()
+  const [password, setPassword]=useState()
+  const navigate = useNavigate();
   const loginUser=(e)=>{
-    axios.get('/')
+    e.preventDefault()
+    // condition will have to chek both email and pass string > 
+    axios.post('http://localhost:3001/Login',{email, password})
+    .then(result =>{console.log(result)
+      if(result.data==="Success"){
+        navigate('/')
+      }
+    })
+    .catch(err=>console.log(err))
   }
   
   return (
@@ -20,8 +27,8 @@ export default function Login(){
       <form className='loginsignup-container' onSubmit={loginUser}> 
       <h1>Login</h1>
       <div className='loginsignup-fields'>
-        <input type="email" placeholder='Email Address' value={data.email} onChange={(e)=>setData({...data,email:e.target.value})}  />
-        <input type="password" placeholder='Password' value={data.password} onChange={(e)=>setData({...data, password: e.target.value})} />
+        <input type="email" placeholder='Email Address' onChange={(e)=>setEmail(e.target.value)}  />
+        <input type="password" placeholder='Password' onChange={(e)=>setPassword(e.target.value)} />
       </div>
       <button>Login</button>
       <p className='loginsignup-login'>Not have an account ?<Link to='/Signup'>Signup</Link></p>

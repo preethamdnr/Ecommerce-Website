@@ -5,16 +5,13 @@ import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart';
-import Login from './Pages/Login.jsx';
+import Login from './Pages/Login';
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
-import axios from 'axios';
-import Signup from './Pages/Signup.jsx';
+import Signup from './Pages/Signup';
 
-axios.defaults.baseURL = 'http://localhost:8000'
-axios.defaults.withCredentials = true
  
 
 function App() {
