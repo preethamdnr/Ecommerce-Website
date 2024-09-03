@@ -6,17 +6,34 @@ import{useNavigate} from 'react-router-dom'
 
 export default function Signup() {
 
-  const [name, setName]=useState()
-  const [email, setEmail]=useState()
-  const [password, setPassword]=useState()
+  const [name, setName]=useState('')
+  const [email, setEmail]=useState('')
+  const [password, setPassword]=useState('')
   const navigate = useNavigate();
   const signupUser=(e)=>{
     e.preventDefault()
+    if (!name) {
+      alert('Name is required.');
+      return;
+    }
+
+    if (!email) {
+      alert('Email is required.');
+      return;
+    }
+
+    if (!password) {
+      alert('Password is required.');
+      return;
+    }
+
     axios.post('http://localhost:3001/Signup',{name, email, password})
     .then(result =>{console.log(result)
       navigate('/Login')
     })
-    .catch(err=>console.log(err))
+    .catch(err=>{console.log(err)
+      alert('An error occurred during signup. Please try again.');
+    });
   }
   return (
     <div className='loginsignup'>
