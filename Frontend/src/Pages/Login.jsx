@@ -51,7 +51,7 @@ export default function Login() {
           <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
         </div>
         <button>Login</button>
-        <p className='loginsignup-login'>Not have an account? <Link to='/Signup'>Signup</Link></p>
+        <p className='loginsignup-login'>Not have an account? <Link className='link-button' to='/Signup'>Signup</Link></p>
         <div className='loginsignup-agree'>
           <input type="checkbox" name='' id='' />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
