@@ -81,6 +81,72 @@ app.post('/Login', async (req, res) => {
   }
 });
 
+app.post('/add-to-cart', async (req, res) => {
+  const { email, productId, quantity } = req.body;
+
+  try {
+    const user = await userdetailsModel.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Check if the product already exists in the cart
+    const existingItem = user.cart.items.find(item => item.productId.toString() === productId);
+    
+    if (existingItem) {
+      // If it exists, update the quantity
+      existingItem.quantity += quantity;
+    } else {
+      // If not, add the new item
+      user.cart.items.push({ productId, quantity });
+    }
+
+    // Calculate total price for the cart
+    user.cart.totalPrice = user.cart.items.reduce((total, item) => total + (item.quantity * item.price), 0);
+
+    await user.save();
+    res.status(200).json({ message: 'Item added to cart', cart: user.cart });
+
+  } catch (err) {
+    console.error('Error adding to cart:', err);
+    res.status(500).json({ message: 'An error occurred while adding to cart', error: err.message });
+  }
+});
+
+app.post('/place-order', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const user = await userdetailsModel.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Create a new order object
+    const newOrder = {
+      orderId: new mongoose.Types.ObjectId(),
+      items: user.cart.items,
+      totalAmount: user.cart.totalPrice,
+      status: 'Pending'
+    };
+
+    // Push the new order to the order history
+    user.orderHistory.push(newOrder);
+
+    // Clear the cart
+    user.cart.items = [];
+    user.cart.totalPrice = 0;
+
+    await user.save();
+    res.status(200).json({ message: 'Order placed successfully', order: newOrder });
+
+  } catch (err) {
+    console.error('Error placing order:', err);
+    res.status(500).json({ message: 'An error occurred while placing the order', error: err.message });
+  }
+});
+
+
 app.listen(3001, () => {
   console.log('Server is running Preetham(on port 3001)');
 });

@@ -13,7 +13,7 @@ const Checkout = () => {
             <input type="text" placeholder='First Name' required />
           </div>
           <div className="form-row">
-            <label>Second Name:</label>
+            <label>Last Name:</label>
             <input type="text" placeholder='Last Name' required />
           </div>
         </div>
