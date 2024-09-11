@@ -1,11 +1,14 @@
 .hero {
-    height: 100vh;
+    height: auto; 
+    min-height: 100vh; 
     background: linear-gradient(180deg, #fde1ff, #e1ffea22 80%);
     display: flex;
     flex-wrap: wrap;
     padding: 0 20px;
     box-sizing: border-box;
-    margin-bottom: 50px;
+    margin-bottom: 80px; 
+    overflow: hidden; 
+    position: relative; 
 }
 .hero-left {
     flex: 1;

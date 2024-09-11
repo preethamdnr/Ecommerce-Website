@@ -4,10 +4,12 @@
     align-items: center;
     gap: 10px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 100px; /* Ensure space above Popular section */
     margin-bottom: 20vh;
     padding: 0 20px;
     box-sizing: border-box;
+    position: relative; /* Added to prevent overlap */
+    z-index: 1; /* Make sure the Popular section is layered above */
 }
 
 .popular h1 {
