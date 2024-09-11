@@ -1,15 +1,15 @@
-/* Main container styling */
 .main-container {
     display: flex;
-    flex-direction: column; /* Stacks the forms vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center; 
     padding: 2vh;
     min-height: 80vh;
     background-color: #fae6ff;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Form container styling */
 .form-container {
     padding: 30px;
     background: #f8f8f8;
@@ -18,11 +18,10 @@
     max-width: 600px;
     width: 100%;
     font-family: 'Arial', sans-serif;
-    margin-bottom: 20px; /* Adds space between the two forms */
-    box-sizing: border-box; /* Ensure padding does not affect width */
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
-/* Title styling */
 .form-container h1 {
     font-size: 24px;
     font-weight: bold;
@@ -31,19 +30,21 @@
     margin-bottom: 20px;
 }
 
-/* Input group styling */
 .form-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Input and label styling */
 .form-container label {
     font-weight: 500;
     color: #555;
     width: 30%;
+    box-sizing: border-box;
 }
 
 .form-container input {
@@ -56,14 +57,14 @@
     margin-right: 10px;
 }
 
-/* Two-column layout for fields */
 .two-column {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Button styling */
 .button-primary {
     display: block;
     width: 100%;
@@ -83,7 +84,6 @@
     background-color: #0056b3;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .form-container {
         padding: 20px;
@@ -97,5 +97,31 @@
     .form-container input {
         width: 100%;
         margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+
+    .form-container label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    .button-primary {
+        font-size: 14px;
+        padding: 8px;
     }
 }

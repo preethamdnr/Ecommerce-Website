@@ -35,6 +35,13 @@ const CartItems = () => {
             return null;
         })}
         <div className="cartitems-down">
+        <div className="cartitems-promocode">
+                    <p>If you have a promocode, Enter it here</p>
+                    <div className="cartitems-promobox">
+                        <input type="text" placeholder='promo code' />
+                        <button>Submit</button>
+                    </div>
+                </div>
             <div className="cartitems-total">
                 <h1>Cart Total</h1>
                 <div>
@@ -57,13 +64,7 @@ const CartItems = () => {
                     <Link className='links-button' to='/Checkout'>CHECKOUT</Link>
                 </div>
                 </div>
-                <div className="cartitems-promocode">
-                    <p>If you have a promocode, Enter it here</p>
-                    <div className="cartitems-promobox">
-                        <input type="text" placeholder='promo code' />
-                        <button>Submit</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
   )

@@ -1,45 +1,61 @@
-.shop-category{
+.shop-category {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-.shopcategory-banner{
+
+.shopcategory-banner {
     display: block;
     margin: 30px auto;
     width: 90%;
 }
-.shopcategory-indexSort{
+
+.shopcategory-indexSort {
     display: flex;
-    margin: 0px 170px;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.shopcategory-sort{
+
+.shopcategory-sort {
     padding: 10px 20px;
     border-radius: 40px;
     border: 1px solid #888;
 }
-.shopcategory-indexSort p span{
+
+.shopcategory-indexSort p span {
     font-weight: 600;
 }
-.shopcategory-products{
-    margin: 10vh 10vh;
+
+.shopcategory-products {
+    margin: 10vh 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
-.shopcategory-products .item{
+
+.shopcategory-products .item {
     font-size: 10px;
-   
 }
+
 .shopcategory-products .item img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
-.shopcategory-loadmore{
+
+.shopcategory-loadmore {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,4 +67,45 @@
     color: #787878;
     font-size: 18px;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .shopcategory-indexSort {
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .shopcategory-products {
+        margin: 5vh 0;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+    }
+
+    .shopcategory-loadmore {
+        width: 200px;
+        height: 60px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shopcategory-indexSort {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .shopcategory-products {
+        margin: 5vh 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .shopcategory-loadmore {
+        width: 150px;
+        height: 50px;
+        font-size: 14px;
+    }
 }

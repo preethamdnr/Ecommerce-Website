@@ -1,9 +1,16 @@
-.hero{
-    height: 100vh;
+.hero {
+    height: auto; 
+    min-height: 100vh; 
     background: linear-gradient(180deg, #fde1ff, #e1ffea22 80%);
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 80px; 
+    overflow: hidden; 
+    position: relative; 
 }
-.hero-left{
+.hero-left {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -11,26 +18,27 @@
     gap: 10px;
     padding-left: 100px;
     line-height: 0.8;
+    max-width: 100%;
 }
-.hero-left h2{
+.hero-left h2 {
     color: #090909;
     font-size: 26px;
     font-weight: 600;
 }
-.hero-left p{
+.hero-left p {
     color: #171717;
     font-size: 30px;
     font-weight: 700;
 }
-.hero-hand-icon{
+.hero-hand-icon {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.hero-hand-icon img{
+.hero-hand-icon img {
     width: 105px;
 }
-.hero-latest-btn{
+.hero-latest-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,13 +52,76 @@
     font-size: 22px;
     font-weight: 500;
 }
-.hero-right{
+.hero-right {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
 }
-.hero-right img{
-    height: 100vh;
+.hero-right img {
+    height: auto;
+    max-width: 100%;
     width: 80vh;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .hero-left {
+        padding-left: 20px;
+        align-items: center;
+    }
+    .hero-left h2 {
+        font-size: 22px;
+    }
+    .hero-left p {
+        font-size: 24px;
+    }
+    .hero-hand-icon img {
+        width: 80px;
+    }
+    .hero-latest-btn {
+        width: 250px;
+        height: 60px;
+        font-size: 18px;
+    }
+    .hero-right img {
+        height: auto;
+        width: 70vh;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left {
+        padding-left: 0;
+        text-align: center;
+    }
+    .hero-left h2 {
+        font-size: 18px;
+    }
+    .hero-left p {
+        font-size: 20px;
+    }
+    .hero-hand-icon {
+        justify-content: center;
+    }
+    .hero-hand-icon img {
+        width: 60px;
+    }
+    .hero-latest-btn {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+    .hero-right img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
 }

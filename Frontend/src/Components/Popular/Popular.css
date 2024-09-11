@@ -1,39 +1,83 @@
-.popular{
+.popular {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 90vh;
+    height: auto;
+    margin-top: 100px; /* Ensure space above Popular section */
     margin-bottom: 20vh;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative; /* Added to prevent overlap */
+    z-index: 1; /* Make sure the Popular section is layered above */
 }
 
-.popular h1{
+.popular h1 {
     color: #171717;
     font-size: 50px;
     font-weight: 600;
+    text-align: center;
 }
-.popular hr{
-    width: 200;
+
+.popular hr {
+    width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
 }
 
-.popular-item{
+.popular-item {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-}
 .popular-item .item {
-    flex: 0 0 calc(23% - 10px);          
-    max-width: calc(23% - 10px);         
-    box-sizing: border-box; 
+    flex: 0 0 calc(23% - 10px);
+    max-width: calc(23% - 10px);
+    box-sizing: border-box;
 }
+
 .popular-item .item img {
-    width: 100%;             
-    height: auto;            
-    display: block;          
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .popular {
+        margin-top: 30px;
+        margin-bottom: 15vh;
+    }
+    .popular h1 {
+        font-size: 36px;
+    }
+    .popular hr {
+        width: 150px;
+    }
+    .popular-item .item {
+        flex: 0 0 calc(48% - 10px);
+        max-width: calc(48% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .popular {
+        margin-top: 20px; 
+    }
+    .popular h1 {
+        font-size: 28px;
+    }
+    .popular hr {
+        width: 100px;
+        height: 4px;
+    }
+    .popular-item .item {
+        flex: 0 0 calc(100% - 10px);
+        max-width: calc(100% - 10px);
+    }
 }
