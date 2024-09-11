@@ -1,17 +1,22 @@
 .offers {
-    width: 65%;
-    height: 60vh;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
     display: flex;
+    flex-direction: row;
     margin: auto;
-    padding: 0px 140px;
+    padding: 0 20px;
     margin-bottom: 150px;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    box-sizing: border-box;
 }
 .offers-left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 .offers-left h1 {
     color: #171717;
@@ -24,7 +29,8 @@
     font-weight: 600;
 }
 .offers-left button {
-    width: 282px;
+    width: 100%;
+    max-width: 282px;
     height: 70px;
     border-radius: 35px;
     background-color: #ff4141;
@@ -39,21 +45,19 @@
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding-top: 50px;
 }
 .offers-right img {
-    height: 90vh;
-    width: 70vh;
-    margin-top: 30vh;
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 768px) {
     .offers {
-        width: 85%;
         flex-direction: column;
-        height: auto;
-        padding: 0px 60px;
+        align-items: center;
+        padding: 0 40px;
         margin-bottom: 100px;
     }
     .offers-left h1 {
@@ -63,7 +67,8 @@
         font-size: 18px;
     }
     .offers-left button {
-        width: 240px;
+        width: 100%;
+        max-width: 240px;
         height: 60px;
         font-size: 18px;
     }
@@ -72,16 +77,15 @@
         padding-top: 30px;
     }
     .offers-right img {
-        height: 60vh;
-        width: 50vh;
+        height: auto;
+        width: 80%;
         margin-top: 10vh;
     }
 }
 
 @media (max-width: 480px) {
     .offers {
-        width: 95%;
-        padding: 0px 20px;
+        padding: 0 20px;
         margin-bottom: 80px;
     }
     .offers-left h1 {
@@ -91,13 +95,14 @@
         font-size: 16px;
     }
     .offers-left button {
-        width: 200px;
+        width: 100%;
+        max-width: 200px;
         height: 50px;
         font-size: 16px;
     }
     .offers-right img {
-        height: 40vh;
         width: 100%;
+        height: auto;
         margin-top: 5vh;
     }
 }

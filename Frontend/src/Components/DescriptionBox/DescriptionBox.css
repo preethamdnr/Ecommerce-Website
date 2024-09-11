@@ -1,8 +1,12 @@
 .descriptionbox {
-    margin: 70px 70px;
+    margin: 70px auto;
+    max-width: 90%;
 }
 .descriptionbox-navigator {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 .descriptionbox-nav-box {
     display: flex;
@@ -13,6 +17,7 @@
     width: 171px;
     height: 70px;
     border: 1px solid #d0d0d0;
+    box-sizing: border-box;
 }
 .descriptionbox-nav-box.fade {
     background: #fbfbfb;
@@ -25,11 +30,13 @@
     border: 1px solid #d0d0d0;
     padding: 28px;
     padding-bottom: 30px;
+    max-width: 100%;
 }
 
 @media (max-width: 768px) {
     .descriptionbox {
-        margin: 50px 40px;
+        margin: 50px auto;
+        max-width: 95%;
     }
     .descriptionbox-nav-box {
         width: 120px;
@@ -44,7 +51,8 @@
 
 @media (max-width: 480px) {
     .descriptionbox {
-        margin: 30px 20px;
+        margin: 30px auto;
+        max-width: 100%;
     }
     .descriptionbox-navigator {
         flex-direction: column;

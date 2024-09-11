@@ -5,14 +5,16 @@
     color: #5e5e5e;
     font-size: 16px;
     font-weight: 600;
-    margin: 30px 140px;
+    margin: 30px auto;
     text-transform: capitalize;
+    max-width: 90%;
 }
 
 @media (max-width: 768px) {
     .breadcrum {
         font-size: 14px;
-        margin: 20px 60px;
+        margin: 20px auto;
+        max-width: 95%;
     }
 }
 
@@ -20,7 +22,8 @@
     .breadcrum {
         font-size: 12px;
         gap: 4px;
-        margin: 15px 20px;
+        margin: 15px auto;
         flex-wrap: wrap;
+        max-width: 100%;
     }
 }

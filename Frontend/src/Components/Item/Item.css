@@ -1,5 +1,7 @@
 .item {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
 }
 .item p {
     margin: 6px 0px;
@@ -26,7 +28,7 @@
 
 @media (max-width: 768px) {
     .item {
-        width: 300px;
+        max-width: 300px;
     }
     .item-price-new,
     .item-price-old {
@@ -36,7 +38,6 @@
 
 @media (max-width: 480px) {
     .item {
-        width: 100%;
         max-width: 250px;
         margin: 0 auto;
     }

@@ -6,6 +6,8 @@
     padding: 2vh;
     min-height: 80vh;
     background-color: #fae6ff;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-container {
@@ -33,12 +35,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-container label {
     font-weight: 500;
     color: #555;
     width: 30%;
+    box-sizing: border-box;
 }
 
 .form-container input {
@@ -55,6 +61,8 @@
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .button-primary {

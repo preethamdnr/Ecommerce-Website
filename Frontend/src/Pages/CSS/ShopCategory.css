@@ -4,6 +4,8 @@
     align-items: center;
     height: auto;
     overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .shopcategory-banner {
@@ -14,9 +16,13 @@
 
 .shopcategory-indexSort {
     display: flex;
-    margin: 0px 170px;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .shopcategory-sort {
@@ -30,10 +36,13 @@
 }
 
 .shopcategory-products {
-    margin: 10vh 10vh;
+    margin: 10vh 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 .shopcategory-products .item {
@@ -62,15 +71,16 @@
 
 @media (max-width: 768px) {
     .shopcategory-indexSort {
-        margin: 0px 40px;
+        margin: 0 auto;
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        width: 90%;
     }
 
     .shopcategory-products {
-        margin: 5vh 5vh;
-        grid-template-columns: 1fr 1fr;
+        margin: 5vh 0;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 30px;
     }
 
@@ -83,11 +93,12 @@
 
 @media (max-width: 480px) {
     .shopcategory-indexSort {
-        margin: 0px 20px;
+        margin: 0 auto;
+        width: 95%;
     }
 
     .shopcategory-products {
-        margin: 5vh 2vh;
+        margin: 5vh 0;
         grid-template-columns: 1fr;
         gap: 20px;
     }
