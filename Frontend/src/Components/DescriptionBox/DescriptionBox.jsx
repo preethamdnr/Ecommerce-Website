@@ -14,7 +14,7 @@ const DescriptionBox = () => {
                 services over the internet. It serves as a virtual marketplace where businesses and individuals can 
                 showcase their products,interact with customers,and conduct transactions without the need for a physical
                 presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and
-                the global reach they offer. 
+                the global reach they offer.... 
             </p>
             <p>
                 E-commerce website typically display products or services along with detailed descriptions, images, prices, 
